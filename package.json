@@ -1,0 +1,12 @@
+{
+  "name": "wechat-bot",
+  "version": "0.0.1",
+  "description": "wechat bot",
+  "main": "index.js",
+  "repository": "git@github.com:yuler/wechat-bot.git",
+  "author": "yuler <joyful4yu@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "micro": "^9.3.4"
+  }
+}
