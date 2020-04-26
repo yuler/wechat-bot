@@ -12,6 +12,7 @@ enum MessageType {
 
 export default (req: NowRequest, res: NowResponse) => {
   const { chatId, payload } = req.body.data
+  console.log(payload)
   ;(() => {
     try {
       got.post('https://ex-api.botorange.com/message/send', {
