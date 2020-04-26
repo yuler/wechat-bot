@@ -13,16 +13,17 @@ enum MessageType {
 export default (req: NowRequest, res: NowResponse) => {
   const { chatId, payload } = req.body.data
   console.log(payload)
+  console.log(`
   ;(async () => {
     try {
       const {body} = await got.post('https://ex-api.botorange.com/message/send', {
         json: {
-          chatId,
-          token,
-          messageType: MessageType.TEXT,
+          chatId: ${chatId},
+          token: ${token},
+          messageType: ${MessageType.TEXT},
           payload: {
-            text: payload.text,
-            mention: payload.mention
+            text: ${payload.text},
+            mention: ${payload.mention}
           }
         }
       })
@@ -30,6 +31,6 @@ export default (req: NowRequest, res: NowResponse) => {
     } catch (error) {
       console.log(error)
     }
-  })()
+  })()`)
   res.end()
 }
