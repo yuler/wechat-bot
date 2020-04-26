@@ -15,7 +15,7 @@ export default (req: NowRequest, res: NowResponse) => {
   console.log(payload)
   ;(async () => {
     try {
-      await got.post('https://ex-api.botorange.com/message/send', {
+      const {body} = await got.post('https://ex-api.botorange.com/message/send', {
         json: {
           chatId,
           token,
@@ -26,6 +26,7 @@ export default (req: NowRequest, res: NowResponse) => {
           }
         }
       })
+      console.log(body)
     } catch (error) {
       console.log(error)
     }
