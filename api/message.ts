@@ -11,8 +11,8 @@ enum MessageType {
 }
 
 export default (req: NowRequest, res: NowResponse) => {
-  const { chatId, payload } = req.body.data
-  console.log(payload)
+  const { chatId, contactId, payload } = req.body.data
+  console.log(req.body.data)
   ;(async () => {
     try {
       const {body} = await got.post('https://ex-api.botorange.com/message/send', {
@@ -22,7 +22,7 @@ export default (req: NowRequest, res: NowResponse) => {
           messageType: MessageType.TEXT,
           payload: {
             text: payload.text,
-            mention: payload.mention
+            mention: payload.mention.push(contactId)
           }
         }
       })
