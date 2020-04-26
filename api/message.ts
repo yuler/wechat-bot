@@ -22,7 +22,7 @@ export default (req: NowRequest, res: NowResponse) => {
           messageType: MessageType.TEXT,
           payload: {
             text: payload.text,
-            mention: payload.mention.push(contactId)
+            mention: payload.mention
           }
         }
       })
